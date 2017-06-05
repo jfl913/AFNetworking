@@ -28,6 +28,7 @@
 #define NSFoundationVersionNumber_With_Fixed_5871104061079552_bug NSFoundationVersionNumber_iOS_8_0
 #endif
 
+// 创建一个串行队列
 static dispatch_queue_t url_session_manager_creation_queue() {
     static dispatch_queue_t af_url_session_manager_creation_queue;
     static dispatch_once_t onceToken;
@@ -49,6 +50,7 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     }
 }
 
+// 创建并行的处理队列
 static dispatch_queue_t url_session_manager_processing_queue() {
     static dispatch_queue_t af_url_session_manager_processing_queue;
     static dispatch_once_t onceToken;
